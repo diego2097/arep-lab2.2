@@ -6,6 +6,7 @@
 package edu.escuelaing.arem;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.DecimalFormat;
 import spark.Request;
 import spark.Response;
 import static spark.Spark.*;
@@ -40,38 +41,36 @@ public class SparkWebApp {
                 + "<h1>Calculadora de la media y desviacion estandar</h1>\n"
                 + "<p>Dado un conjunto de n numeros, este programa calcula la desviacion y media del conjunto</p>\n"
                 + "<p>Los numeros deben estar separados por comas</p>\n"
-                + "<form>"
+                + "<form action=\"/respuesta\">"
                 + "Ingrese sus datos:<br>\n"
                 + "<input type=\"text\" name=\"numeros\" placeholder=\"numeros\"><br>\n"
-                + "<href type=\"submit\" value=\"Calcular\">\n"
-                + "<a href=\"/respuesta\">Ver respuesta</a>"
+                + "<input type=\"submit\" value=\"Calcular\">\n"
                 + "</form>\n"
                 + "</body>\n" 
                 + "</html>\n";
-        String numbers = rq.queryParams("numeros");
-        System.out.println("numbers");
         return pagina;
     }
 
-    private static String respuesta(Request rq, Response rp){
+    private static String respuesta(Request rq, Response rp) throws IOException{
+        DecimalFormat df = new DecimalFormat("#.00");
+        LinkedList<Double> rta = App.calculo(rq.queryParams("numeros"));
         
-        
-        
-        String pagina = "<!DOCTYPE html>\n" 
-                + "<html>\n" 
-                + "<body>\n"
+        String pagina = "<!DOCTYPE html>" 
+                + "<html>" 
+                + "<body>"
                 + "<h1>Resultados</h1>\n"
-                + "<p>La media es: </p>\n" //+ media 
-                + "<p>La desviacion estandar es: </p>\n" //+ desviacion
-                + "</form>\n"
-                + "</body>\n" 
-                + "</html>\n";
+                + "La media es:" + df.format(rta.get(0)) +"<br>"//+ media 
+                + "La desviacion estandar es:" + df.format(rta.get(1)) +"<br>" //+ desviacion
+                + "<a href=\"/index\">Volver</a>"
+                + "</body>" 
+                + "</html>";
        
         return pagina;
     }
 
    public static LinkedList<Double> calculo(String numeros)throws FileNotFoundException, IOException{  
         String[] list = numeros.split(",");
+        
         float suma=0;
         LinkedList<Double> lista = new LinkedList<>();
         for (int i=0; i<list.length;i++){ 
