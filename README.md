@@ -19,15 +19,15 @@ The following values were used to test the program
 ## Web 
 The following is the web design of the program. First An intial page where the user put the data that want to calculate from. 
 
-![alt text](https://github.com/diego2097/arep-lab/blob/master/apidocs/data.PNG "index")
+![alt text](https://github.com/diego2097/arep-lab2.2/blob/master/pictures/index.png "index")
 
 Then the user inserts the data 
 
-![alt text](https://github.com/diego2097/arep-lab/blob/master/apidocs/data.PNG "data")
+![alt text](https://github.com/diego2097/arep-lab2.2/blob/master/pictures/data.png "data")
 
 Finally after submit calcular, it redirects to /respuesta where the standard deviation and mean are displayed
 
-![alt text](https://github.com/diego2097/arep-lab/blob/master/apidocs/respuesta.PNG "respuesta")
+![alt text](https://github.com/diego2097/arep-lab2.2/blob/master/pictures/respuesta.png "respuesta")
 
 If the user wants to calculate another set of numbers, he can click Volver.
 
