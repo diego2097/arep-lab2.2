@@ -61,7 +61,7 @@ public class SparkWebApp {
                 + "<h1>Resultados</h1>\n"
                 + "La media es:" + df.format(rta.get(0)) +"<br>"//+ media 
                 + "La desviacion estandar es:" + df.format(rta.get(1)) +"<br>" //+ desviacion
-                + "<a href=\"/index\">Volver</a>"
+                + "<a href=\"/\">Volver</a>"
                 + "</body>" 
                 + "</html>";
        
