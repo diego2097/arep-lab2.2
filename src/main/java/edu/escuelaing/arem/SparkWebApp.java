@@ -22,7 +22,7 @@ public class SparkWebApp {
 
     public static void main(String[] args) {
         port(getPort());
-        get("/index", (req, res) -> index(req,res));
+        get("/", (req, res) -> index(req,res));
         get("/respuesta", (req, res) -> respuesta(req,res));
     }
  
