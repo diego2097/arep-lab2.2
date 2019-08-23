@@ -6,7 +6,7 @@
 ## Program Description 
 The program calculates the mean and standard deviation. for this I used the method calculo that uses a linkedlist implemented in the class LinkedList. the following picture explains the classes design.
 
-![alt text](https://github.com/diego2097/arep-lab/blob/master/apidocs/diseno.PNG "Classes design")
+![alt text](https://github.com/diego2097/arep-lab2.2/blob/master/pictures/diseno.PNG "Classes design")
 
 The following formulas were used to calculate the mean and standard deviation.
 
