@@ -1,4 +1,4 @@
-# Laboratory 1
+# Laboratory 2
 
 ## Objective 
 - Build a program that alllows to calculate the mean and standard deviation of a set of n numbers 
